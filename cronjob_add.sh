@@ -11,7 +11,7 @@ crontab -l > current_crontab.txt
 
 # 임시 파일에서 특정 구문을 포함하지 않는 라인만을 새로운 파일로 저장
 grep -v "* * * * * sh /home/ubuntu/project-log/resource_usage.sh" current_crontab.txt > temp_crontab.txt
-grep -v "* *\/3 * * * sh /home/ubuntu/project-log/mail.sh" temp_crontab.txt > new_crontab.txt
+grep -v "* \*\/3 * * * sh /home/ubuntu/project-log/mail.sh" temp_crontab.txt > new_crontab.txt
 
 # 새롭게 구문 추가
 echo "$CRON_JOB1" >> new_crontab.txt
