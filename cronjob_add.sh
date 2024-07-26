@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "변경 전 크론탭 실행파일입니다."
+crontab -l
 
 # 크론탭에서 제거할 구문
 CRON_JOB1="* * * * * sh /home/ubuntu/project-log/resource_usage.sh"
@@ -16,9 +18,10 @@ echo "$CRON_JOB1" >> new_crontab.txt
 echo "$CRON_JOB2" >> new_crontab.txt
 
 # 새로운 크론탭 파일을 적용
-sudo crontab new_crontab.txt
+crontab new_crontab.txt
 
-whoami
+echo "변경 후 크론탭 실행파일입니다."
+crontab -l
 
 # 임시 파일 삭제
 sudo rm current_crontab.txt temp_crontab.txt new_crontab.txt 
