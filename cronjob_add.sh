@@ -10,8 +10,7 @@ CRON_JOB2="* */3 * * * sh /home/ubuntu/project-log/mail.sh"
 crontab -l > current_crontab.txt
 
 # 임시 파일에서 특정 구문을 포함하지 않는 라인만을 새로운 파일로 저장
-grep -v "$CRON_JOB1" current_crontab.txt > temp_crontab.txt
-grep -v "$CRON_JOB2" temp_crontab.txt > new_crontab.txt
+grep -v -e "$CRON_JOB1" -e "$CRON_JOB2" current_crontab.txt > new_crontab.txt
 
 # 새롭게 구문 추가
 echo "$CRON_JOB1" >> new_crontab.txt
@@ -24,6 +23,6 @@ echo "변경 후 크론탭 실행파일입니다."
 crontab -l
 
 # 임시 파일 삭제
-sudo rm current_crontab.txt temp_crontab.txt new_crontab.txt 
+sudo rm current_crontab.txt new_crontab.txt 
 
 echo "크론탭에서 구문을 갱신했습니다."
