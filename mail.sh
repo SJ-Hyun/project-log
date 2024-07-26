@@ -8,4 +8,4 @@ SUBJECT="AUTO LOGFILE SENDING"
 
 BODY="PLEASE CHECK ATTACHMENT"
 
-echo "${BODY} | mutt -s "${SUBJECT}" -a "${LOG_FILE}" -- "${EMAIL}"
+echo "${BODY}" | mutt -s "${SUBJECT}" -a "${LOG_FILE}" -- "${EMAIL}"
