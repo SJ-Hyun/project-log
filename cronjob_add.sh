@@ -14,11 +14,11 @@ grep -v "* * * * * sh /home/ubuntu/project-log/resource_usage.sh" current_cronta
 grep -v "* * * * * sh /home/ubuntu/project-log/mail.sh" temp_crontab.txt > new_crontab.txt
 
 # 새롭게 구문 추가
-echo "$CRON_JOB1" >> current_crontab.txt
-echo "$CRON_JOB2" >> current_crontab.txt
+echo "$CRON_JOB1" >> new_crontab.txt
+echo "$CRON_JOB2" >> new_crontab.txt
 
 # 새로운 크론탭 파일을 적용
-crontab current_crontab.txt
+crontab new_crontab.txt
 
 echo "변경 후 크론탭 실행파일입니다."
 crontab -l
