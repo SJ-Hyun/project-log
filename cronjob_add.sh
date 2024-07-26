@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 크론탭에서 제거할 구문
-CRON_JOB1="* * * * * sudo /home/ubuntu/project-log/resource_usage.sh"
-CRON_JOB2="* */3 * * * sudo /home/ubuntu/project-log/mail.sh"
+CRON_JOB1="* * * * * sh /home/ubuntu/project-log/resource_usage.sh"
+CRON_JOB2="* */3 * * * sh /home/ubuntu/project-log/mail.sh"
 
 # 현재 사용자 크론탭을 임시 파일에 백업
 crontab -l > current_crontab.txt
